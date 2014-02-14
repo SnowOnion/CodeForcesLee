@@ -1,0 +1,5 @@
+n,c=map(int,raw_input().split(' '))
+xlst=map(int,raw_input().split(' '))
+print n
+print c
+print xlst
