@@ -1,3 +1,4 @@
+#@status AC
 n=int(raw_input())
 
 if n==0:
