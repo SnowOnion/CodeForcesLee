@@ -1,4 +1,6 @@
 //20:30
+//@status give up at 21:50. "1h and find a excellent solution".
+//learn: 关心 1. 贪心那步 2. 双状态表示
 #include<cstdio>
 #include<iostream>
 using namespace std;
