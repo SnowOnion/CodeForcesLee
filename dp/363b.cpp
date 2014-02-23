@@ -3,6 +3,10 @@
 using namespace std;
 #define N 100+10
 
+//@status TLE
+// I really don't freaking know why this TLE. I can't tell the diff between 
+// this and #5058924 (first of http://codeforces.com/problemset/status/363/problem/B?csrf_token=d6g67145a9h8gh6de8ef70b883d174e8&order=BY_CONSUMED_TIME_ASC)
+
 int main()
 {
 	// #ifndef ONLINE_JUDGE
