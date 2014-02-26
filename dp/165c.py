@@ -8,6 +8,8 @@ same pattern(literals), different position -> different substrings
 |s|<=10e6
 '''
 
+# @status TLE
+
 k=int(raw_input())
 s=map(int,list('0'+raw_input()))
 n=len(s)-1
