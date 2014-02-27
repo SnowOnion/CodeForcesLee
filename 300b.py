@@ -1,6 +1,7 @@
 #coding=utf8
 # I don't know about this author. LEE said.
 # @status Thanks God AC
+# write-only
 
 def start():
 	def has(lst,ele):
