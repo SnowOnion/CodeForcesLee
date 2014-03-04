@@ -1,4 +1,4 @@
-# @status
+# @status ing
 
 # @HISTORY Prime=[-1 for x in xrange(1000000010)] # @GET Your computer will 'Boom'
 
