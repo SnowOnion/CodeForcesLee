@@ -1,3 +1,5 @@
+/**AC*/
+
 #include<cstdio>
 #include<algorithm>
 #include<iostream>
