@@ -20,10 +20,10 @@ Node* newNode(int value){
 }
 
 /**
-precon: src != NULL
+precon: parent != NULL
 */
-void mount(Node* src, Node* tar){
-    src->next=tar;
+void mount(Node* child, Node* parent){
+    parent->next=child;
 }
 
 /**
@@ -34,7 +34,7 @@ int isLast(Node* node){
 }
 
 /**
-尽量在 LinkedList 操作中屏蔽 Node 的实现 (比如露出next君)
+尽量在 LinkedList 操作中屏蔽 Node 的实现 (比如避免露出next君)
 */
 
 typedef struct _LinkedList{
@@ -113,7 +113,7 @@ void swapByValue(LinkedList* list, int aVal, int bVal){
         }
         cur=cur->next;
     }
-    swapNode_inside(preA,preB);
+    //swapNode_inside(preA,preB);
 }
 
 int main(){
@@ -121,7 +121,12 @@ int main(){
     LinkedList ll;
     initLL(&ll);
 
+    printf("%d\n",ll.head->value);
+
     insertToEnd(&ll, 1);
+
+    printf("%d\n",ll.head->next->value);
+
     insertToEnd(&ll, 3);
     insertToEnd(&ll, 2);
     insertToEnd(&ll, 4);
