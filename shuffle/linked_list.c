@@ -113,7 +113,7 @@ void swapByValue(LinkedList* list, int aVal, int bVal){
         }
         cur=cur->next;
     }
-    //swapNode_inside(preA,preB);
+    swapNode_inside(preA,preB);
 }
 
 int main(){
@@ -121,12 +121,7 @@ int main(){
     LinkedList ll;
     initLL(&ll);
 
-    printf("%d\n",ll.head->value);
-
     insertToEnd(&ll, 1);
-
-    printf("%d\n",ll.head->next->value);
-
     insertToEnd(&ll, 3);
     insertToEnd(&ll, 2);
     insertToEnd(&ll, 4);
@@ -134,9 +129,13 @@ int main(){
     printLL(&ll);
 
     swapByValue(&ll,3,4);
-
     printLL(&ll);
 
+    swapByValue(&ll,1,2);
+    printLL(&ll);
+
+    swapByValue(&ll,3,2);
+    printLL(&ll);
 
     return 0;
 }
