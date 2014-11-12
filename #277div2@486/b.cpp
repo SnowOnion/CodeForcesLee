@@ -1,3 +1,25 @@
+/**
+初版 passed pretest, failed at system test
+Test: #31, time: 15 ms., memory: 100 KB, exit code: 0, checker exit code: 1, verdict: WRONG_ANSWER
+Input
+3 3
+1 0 0
+1 0 0
+1 0 0
+Output
+YES
+0 0 0
+0 0 0
+0 0 0
+Answer
+NO
+Checker Log
+wrong answer given matrix doesn't produce expected matrix
+
+@status AC
+
+*/
+
 #include<memory.h>
 
 #include <cmath>
@@ -69,11 +91,11 @@ void test()
 
 }
 
+
+
 int M,N;
 int B[110][110];
 int A[110][110];
-int zr[110];
-int zc[110];
 
 void init()
 {
@@ -88,8 +110,6 @@ void init()
     }
     // if not set to 0, is 1 // @GET memset 1 is not valid!!!!!!
     memset(A,-1,sizeof(A));
-    memset(zr,0,sizeof(zr));
-    memset(zc,0,sizeof(zc));
 
     //printMatrix(A,M,N);
 }
@@ -111,25 +131,37 @@ void solve()
                 {
                     A[i][q]=0;
                 }
-                zr[i]=1;
-                zc[j]=1;
             }
         }
     }
+            // 因为memset 不能1, 所以做个傻逼转换
+            // @GET 能否用宏实现个伪函数式的写法?
+    f0n_1(i,M)
+        f0n_1(j,N)
+            if(A[i][j]==-1)
+                A[i][j]=1;
 
     int contra=0;
-    // check "zero grid"
-
-    for(int i=0;i<M;i++){
-        for(int j=0;j<N;j++){
-            if(zr[i]&&zc[j])
-                if(B[i][j]!=0)
-                    contra=1;
-
-            if(A[i][j]==-1){
-                A[i][j]=1;
+    int able; // 用于检查 B input 中的 1 能否成立
+    f0n_1(i,M){
+        f0n_1(j,N){
+            // 检查 B input 中的 1 能否成立
+            if(B[i][j]){
+                // @GET 如果这里重新生命: int able=0; 不会编译错误, 但是就坏事了.
+                able=0;
+                f0n_1(p,M)
+                    if(A[p][j])
+                        able=1;
+                f0n_1(q,N)
+                    if(A[i][q])
+                        able=1;
+            }
+            if(!able){
+                contra=1;
+                break;
             }
         }
+        if(contra) break;
     }
 
 
