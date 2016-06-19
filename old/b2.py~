@@ -1,5 +1,0 @@
-def start():
-    w,m,k=map(int,raw_input().split(' '))
-    
-
-start()
